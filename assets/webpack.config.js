@@ -3,7 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const cssNano = require('cssnano');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const DependencyExtractionWebpackPlugin = require('@wordpress/dependency-extraction-webpack-plugin')
 
 const JS_DIR = path.resolve( __dirname, 'src/js');
 const SCSS_DIR = path.resolve( __dirname, 'src/scss');
@@ -12,7 +13,8 @@ const BUILD_DIR = path.resolve( __dirname, 'build');
 
 const entry = {
     main: JS_DIR + '/main.js',
-    editor: JS_DIR + '/editor.js'
+    editor: JS_DIR + '/editor.js',
+    blocks: JS_DIR + '/blocks.js'
 };
 
 const output = {
@@ -61,6 +63,11 @@ const plugins = (argv) => [
 
     new MiniCssExtractPlugin({
         filename: 'css/[name].css'
+    }),
+
+    new DependencyExtractionWebpackPlugin({
+        injectPolyfill: true,
+        combineAssets: true
     })
 ]
 

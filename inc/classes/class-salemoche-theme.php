@@ -22,6 +22,7 @@ class SALEMOCHE_THEME {
         Assets::get_instance();
         Menus::get_instance();
         Meta_Boxes::get_instance();
+        Blocks::get_instance();
     
         $this->setup_hooks();
     }
@@ -67,6 +68,8 @@ class SALEMOCHE_THEME {
         add_theme_support( 'wp-block-style' );
 
         add_theme_support( 'align-wide' );
+
+        add_theme_support( 'editor-styles' );
 
         add_editor_style( 'assets/build/css/editor.css' );
 

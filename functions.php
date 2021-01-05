@@ -21,6 +21,10 @@ if ( !defined('SALEMOCHE_BUILD_URI')) {
     define( 'SALEMOCHE_BUILD_URI', untrailingslashit( get_template_directory_uri() . '/assets/build' ));
 }
 
+if ( !defined('SALEMOCHE_BUILD_PATH')) {
+    define( 'SALEMOCHE_BUILD_PATH', untrailingslashit( get_template_directory() . '/assets/build' ));
+}
+
 if ( !defined('SALEMOCHE_BUILD_JS_DIR_PATH')) {
     define( 'SALEMOCHE_BUILD_JS_DIR_PATH', untrailingslashit( get_template_directory() . '/assets/build/js' ));
 }
