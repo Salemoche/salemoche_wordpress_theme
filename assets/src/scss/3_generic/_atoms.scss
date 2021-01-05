@@ -1,0 +1,362 @@
+// View applied styles by going to https://your-site.com/wp-content/themes/videojet/assets/style-guide/elements.html
+
+html {
+	box-sizing: border-box;
+	-ms-text-size-adjust: 100%;
+	-webkit-text-size-adjust: 100%;
+}
+
+/* stylelint-disable */
+*,
+*:before,
+*:after {
+	/* Inherit box-sizing to make it easier to change the property for components that leverage other behavior; see http://css-tricks.com/inheriting-box-sizing-probably-slightly-better-best-practice/ */
+	box-sizing: inherit;
+
+	-webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/**
+ * 1. Fallback for when there is no custom background color defined. [WordPress]
+ * 2. Remove default margin. [normalize.css]
+ * 3. Set the base elements `font-size` to the value of your choosing.
+ * 4. Work out the unitless `line-height` for your project based around your
+ *    desired `line-height` (defined previously in pixels), and your projects
+ *    base font size.
+ */
+body {
+	margin: 0;
+	// @include font-family();
+	// @include body-text( body );
+
+	// background: $color__background-body;
+	// color: $color__body-text;
+
+	// WP Editor
+	&.mce-content-body {
+		font-family: inherit;
+		margin: 15px;
+	}
+}
+
+// Gutenberg block quote support.
+blockquote,
+q,
+blockquote.wp-block-quote {
+
+	p {
+    }
+    
+	cite,
+	.wp-block-quote__citation {
+	}
+	/* stylelint-enable */
+
+	p:last-of-type {
+	}
+
+}
+
+/* Pull Quote
+--------------------------------------------- */
+
+.wp-block-pullquote {
+
+	blockquote {
+	}
+
+	&.alignleft,
+	&.alignright {
+
+		blockquote {
+		}
+	}
+}
+
+img {
+}
+
+/* Image Support
+--------------------------------------------- */
+.wp-block-image {
+	&.size-medium,
+	&.size-thumbnail,
+	&.is-resized {
+		img {
+		}
+	}
+
+	figcaption {
+	}
+}
+
+figure {
+}
+
+a {
+	cursor: pointer;
+
+	&:focus {
+		outline: 5px auto -webkit-focus-ring-color;
+		outline-offset: -2px;
+	}
+
+	&:hover,
+	a:active {
+	}
+}
+
+sub,
+sup {
+}
+
+sup {
+}
+
+sub {
+}
+
+/*------------------------------------*\
+    #HEADINGS
+\*------------------------------------*/
+/* stylelint-disable */
+h1 {
+	@include body-text( h1 )
+}
+
+h2 {
+	@include body-text( h2 )
+}
+
+h3 {
+	@include body-text( h3 )
+}
+
+h4 {
+	@include body-text( h4 )
+}
+
+h5 {
+	@include body-text( h5 )
+}
+
+h6 {
+	@include body-text( h6 )
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	margin: 10px 0;
+	text-rendering: optimizelegibility;
+}
+
+/*---------------------------
+		Lists
+---------------------------*/
+
+ul,
+ol {
+
+	&.no-bullet {
+		&,
+		ul,
+		ol {
+			margin: 0;
+			padding: 0;
+			list-style: none;
+		}
+	}
+}
+
+ul {
+}
+
+li > ul,
+li > ol {
+}
+
+dt {
+}
+
+dd {
+}
+
+p {
+	&:empty {
+		display: none;
+	}
+}
+
+li > ul,
+li > ol {
+}
+
+/*------------------------------------*\
+    #TABLE
+\*------------------------------------*/
+
+table {
+	max-width: 100%;
+	background-color: transparent;
+	border-collapse: collapse;
+	border-spacing: 0;
+}
+
+/* Button
+--------------------------------------------- */
+
+.wp-block-button {
+
+	.wp-block-button__link {
+
+		&:hover {
+		}
+
+	}
+}
+/* stylelint-enable */
+
+/*------------------------------------*\
+    Form Fields
+\*------------------------------------*/
+
+input,
+button,
+select,
+textarea {
+	font-family: $font__main;
+}
+
+select,
+textarea,
+input[type="text"],
+input[type="password"],
+input[type="datetime"],
+input[type="datetime-local"],
+input[type="date"],
+input[type="month"],
+input[type="time"],
+input[type="week"],
+input[type="number"],
+input[type="email"],
+input[type="url"],
+input[type="search"],
+input[type="tel"],
+input[type="color"],
+.uneditable-input {
+	display: inline-block;
+}
+
+textarea {
+	height: auto;
+	max-width: 100%;
+	outline: none;
+	overflow: auto; // Remove the default vertical scrollbar in IE 10+.
+}
+
+select {
+}
+
+select,
+input[type="file"] {
+}
+
+button {
+}
+
+label {
+}
+
+label,
+input,
+button,
+select,
+textarea {
+	@include body-text( body );
+}
+
+label,
+select,
+button,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+input[type="radio"],
+input[type="checkbox"] {
+	cursor: pointer;
+}
+
+input[type="search"] {
+	-webkit-appearance: textfield;
+}
+
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button {
+	-webkit-appearance: none;
+}
+
+/*------------------------------------*\
+    #OTHER
+\*------------------------------------*/
+
+pre {
+	display: block;
+	font-size: 13px;
+	word-break: break-all;
+	word-wrap: break-word;
+	white-space: pre-wrap;
+	background-color: gray;
+	border: 1px solid black;
+	border-radius: 4px;
+	font-family: $font__code;
+}
+
+code {
+	padding: 2px 4px;
+	color: #d14;
+	white-space: nowrap;
+	background-color: #f7f7f9;
+	border: 1px solid #e1e1e8;
+	font-family: $font__code;
+	border-radius: 3px;
+}
+
+/* Separator
+--------------------------------------------- */
+
+.wp-block-separator,
+hr {
+
+	width: 100%;
+	margin: 20px 0;
+	border: 0;
+	border-bottom: 1px solid black;
+	box-sizing: content-box;
+
+	&:not(.is-style-dots) {
+	}
+
+	&:not(.is-style-wide):not(.is-style-dots) {
+		width: 100%;
+		height: 4px;
+		background: transparent;
+
+		&::before {
+			content: "";
+			display: block;
+			height: 4px;
+			width: 40px;
+		}
+	}
+
+	&.is-style-dots::before {
+		color: gray;
+		font-size: 18px;
+		letter-spacing: 12px;
+		padding-left: 12px;
+	}
+}
